@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cascading-chicken/static/css/main.5979dcc0.css",
+    "main.js": "/cascading-chicken/static/js/main.3073fdd4.js",
+    "index.html": "/cascading-chicken/index.html",
+    "main.5979dcc0.css.map": "/cascading-chicken/static/css/main.5979dcc0.css.map",
+    "main.3073fdd4.js.map": "/cascading-chicken/static/js/main.3073fdd4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5979dcc0.css",
+    "static/js/main.3073fdd4.js"
+  ]
+}
