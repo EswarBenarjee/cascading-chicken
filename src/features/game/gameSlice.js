@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import Description from "../../components/Description";
 
 const initialState = {
   level: 1,
   code: "",
   playerPosition: { row: 0, col: 0 },
   levelPassed: false,
-  description: ""
+  description: "",
+  gameStarted: false,
 };
 
 const gameSlice = createSlice({
@@ -15,6 +15,9 @@ const gameSlice = createSlice({
   reducers: {
     setCode: (state, action) => {
       state.code = action.payload;
+    },
+    setGameStart: (state, action) => {
+      state.gameStarted = action.payload;
     },
     movePlayer: (state, action) => {
       state.playerPosition = action.payload;
@@ -67,5 +70,6 @@ const gameSlice = createSlice({
   },
 });
 
-export const { setCode, movePlayer, passLevel, nextLevel } = gameSlice.actions;
+export const { setCode, movePlayer, passLevel, nextLevel, setGameStart } =
+  gameSlice.actions;
 export default gameSlice.reducer;
