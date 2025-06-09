@@ -10,7 +10,7 @@ const initialState = {
   code: "",
   playerPosition: { row: 0, col: 0 },
   levelPassed: false,
-  gameStarted: true,
+  gameStarted: false,
   levelData: getLevelData(0),
 };
 
