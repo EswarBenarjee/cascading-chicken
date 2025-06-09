@@ -24,7 +24,7 @@ const gameSlice = createSlice({
     setGameStart: (state, action) => {
       state.gameStarted = action.payload;
       state.level = 0;
-      state.levelData = getLevelData(1);
+      state.levelData = getLevelData(0);
     },
     movePlayer: (state, action) => {
       state.playerPosition = action.payload;
