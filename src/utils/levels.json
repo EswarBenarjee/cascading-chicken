@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "description": "Lily Pad should be green color",
+    "frog": [3, 4],
+    "finish": [2, 4],
+    "lilly": [
+      [2, 4],
+      [3, 4]
+    ],
+    "lillyClasses": ["bg-red-900", "bg-green-900"]
+  }
+]

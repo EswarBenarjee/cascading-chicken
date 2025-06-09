@@ -36,13 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.left-panel {
-  background-color: #fefefe;
-  padding: 1rem;
-}
-.right-panel {
-  background-color: #f4f4f9;
-  padding: 2rem;
-  border-left: 2px solid #e0e0e0;
-}

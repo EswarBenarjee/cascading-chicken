@@ -1,12 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
+import levels from "../../utils/levels.json";
+
+const getLevelData = (level) => {
+  return levels[level];
+};
 
 const initialState = {
-  level: 1,
+  level: 0,
   code: "",
   playerPosition: { row: 0, col: 0 },
   levelPassed: false,
-  description: "",
-  gameStarted: false,
+  gameStarted: true,
+  levelData: getLevelData(0),
 };
 
 const gameSlice = createSlice({
@@ -18,12 +23,15 @@ const gameSlice = createSlice({
     },
     setGameStart: (state, action) => {
       state.gameStarted = action.payload;
+      state.level = 0;
+      state.levelData = getLevelData(1);
     },
     movePlayer: (state, action) => {
       state.playerPosition = action.payload;
     },
     passLevel: (state) => {
       state.levelPassed = true;
+      nextLevel();
     },
     nextLevel: (state) => {
       // Save current level state
@@ -53,18 +61,18 @@ const gameSlice = createSlice({
             row: 0,
             col: 0,
           };
-          state.description = "";
+          state.levelData = getLevelData(state.levelPassed || 1);
         } catch (e) {
           state.code = "";
           state.levelPassed = false;
           state.playerPosition = { row: 0, col: 0 };
-          state.description = "";
+          state.levelData = getLevelData(0);
         }
       } else {
         state.code = "";
         state.levelPassed = false;
         state.playerPosition = { row: 0, col: 0 };
-        state.description = "";
+        state.levelData = getLevelData(0);
       }
     },
   },
