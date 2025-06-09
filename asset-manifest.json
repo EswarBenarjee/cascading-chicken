@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cascading-chicken/static/css/main.d34960f4.css",
-    "main.js": "/cascading-chicken/static/js/main.224ed7e1.js",
+    "main.js": "/cascading-chicken/static/js/main.a852ff63.js",
     "static/media/grass.png": "/cascading-chicken/static/media/grass.58eb032fe701bb5ab414.png",
     "static/media/water.png": "/cascading-chicken/static/media/water.ba20ad44960224b9b196.png",
     "index.html": "/cascading-chicken/index.html",
     "main.d34960f4.css.map": "/cascading-chicken/static/css/main.d34960f4.css.map",
-    "main.224ed7e1.js.map": "/cascading-chicken/static/js/main.224ed7e1.js.map"
+    "main.a852ff63.js.map": "/cascading-chicken/static/js/main.a852ff63.js.map"
   },
   "entrypoints": [
     "static/css/main.d34960f4.css",
-    "static/js/main.224ed7e1.js"
+    "static/js/main.a852ff63.js"
   ]
 }
