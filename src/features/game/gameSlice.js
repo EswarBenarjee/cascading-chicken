@@ -8,10 +8,11 @@ const getLevelData = (level) => {
 const initialState = {
   level: 0,
   code: "",
-  playerPosition: { row: 0, col: 0 },
+  playerPosition: getLevelData(0).frog,
   levelPassed: false,
-  gameStarted: false,
+  gameStarted: true,
   levelData: getLevelData(0),
+  character: "crab",
 };
 
 const gameSlice = createSlice({
@@ -34,7 +35,6 @@ const gameSlice = createSlice({
       nextLevel();
     },
     nextLevel: (state) => {
-      // Save current level state
       const saveData = {
         code: state.code,
         playerPosition: state.playerPosition,
@@ -45,7 +45,6 @@ const gameSlice = createSlice({
         JSON.stringify(saveData)
       );
 
-      // Move to next level
       state.level++;
 
       const nextLevelRaw = localStorage.getItem(
@@ -57,27 +56,81 @@ const gameSlice = createSlice({
           const nextLevelData = JSON.parse(nextLevelRaw);
           state.code = nextLevelData.code || "";
           state.levelPassed = !!nextLevelData.levelPassed;
-          state.playerPosition = nextLevelData.playerPosition || {
-            row: 0,
-            col: 0,
-          };
           state.levelData = getLevelData(state.levelPassed || 1);
+          state.playerPosition = state.levelData.frog;
         } catch (e) {
           state.code = "";
           state.levelPassed = false;
-          state.playerPosition = { row: 0, col: 0 };
           state.levelData = getLevelData(0);
+          state.playerPosition = state.levelData.frog;
         }
       } else {
         state.code = "";
         state.levelPassed = false;
-        state.playerPosition = { row: 0, col: 0 };
-        state.levelData = getLevelData(0);
+        state.levelData = getLevelData(state.level);
+        state.playerPosition = state.levelData.frog;
+      }
+    },
+    prevLevel: (state) => {
+      const saveData = {
+        code: state.code,
+        playerPosition: state.playerPosition,
+        levelPassed: state.levelPassed,
+      };
+      localStorage.setItem(
+        "cascadingchickenlevel" + state.level,
+        JSON.stringify(saveData)
+      );
+
+      state.level--;
+
+      const nextLevelRaw = localStorage.getItem(
+        "cascadingchickenlevel" + state.level
+      );
+
+      if (nextLevelRaw) {
+        try {
+          const nextLevelData = JSON.parse(nextLevelRaw);
+          state.code = nextLevelData.code || "";
+          state.levelPassed = !!nextLevelData.levelPassed;
+          state.levelData = getLevelData(state.levelPassed || 1);
+          state.playerPosition = state.levelData.frog;
+        } catch (e) {
+          state.code = "";
+          state.levelPassed = false;
+          state.levelData = getLevelData(0);
+          state.playerPosition = state.levelData.frog;
+        }
+      } else {
+        state.code = "";
+        state.levelPassed = false;
+        state.levelData = getLevelData(state.level);
+        state.playerPosition = state.levelData.frog;
+      }
+    },
+    setCharacter: (state, action) => {
+      state.character = action.payload;
+    },
+    moveCharacter: (state) => {
+      if (state.playerPosition[0] > 0) {
+        state.playerPosition = [
+          state.playerPosition[0] - 1,
+          state.playerPosition[1],
+        ];
+        console.log(state.playerPosition)
       }
     },
   },
 });
 
-export const { setCode, movePlayer, passLevel, nextLevel, setGameStart } =
-  gameSlice.actions;
+export const {
+  setCode,
+  movePlayer,
+  passLevel,
+  prevLevel,
+  nextLevel,
+  setGameStart,
+  setCharacter,
+  moveCharacter,
+} = gameSlice.actions;
 export default gameSlice.reducer;

@@ -1,13 +1,30 @@
 [
   {
-    "id": 1,
-    "description": "Lily Pad should be green color",
-    "frog": [3, 4],
-    "finish": [2, 4],
+    "id": 0,
+    "description": "Lilly pads should be green color",
+    "finish": [4, 4],
+    "frog": [5, 4],
     "lilly": [
-      [2, 4],
-      [3, 4]
+      [4, 4],
+      [5, 4]
     ],
-    "lillyClasses": ["bg-red-900", "bg-green-900"]
+    "lillyTypes": ["red", "green"],
+    "classToEdit": "lilly-0",
+    "canCharacterMove": false,
+    "answer": "background-color:green"
+  },
+  {
+    "id": 1,
+    "description": "Both lilly pads are in separate divs. ",
+    "finish": [4, 4],
+    "frog": [6, 4],
+    "lilly": [
+      [4, 4],
+      [6, 4]
+    ],
+    "lillyClasses": ["", "mt-12"],
+    "classToEdit": "lilly-0",
+    "canCharacterMove": false,
+    "answer": "margin-bottom:30px"
   }
 ]
