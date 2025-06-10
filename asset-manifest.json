@@ -1,15 +1,22 @@
 {
   "files": {
-    "main.css": "/cascading-chicken/static/css/main.d34960f4.css",
-    "main.js": "/cascading-chicken/static/js/main.f81c5876.js",
+    "main.css": "/cascading-chicken/static/css/main.241459d0.css",
+    "main.js": "/cascading-chicken/static/js/main.aed6512b.js",
     "static/media/grass.png": "/cascading-chicken/static/media/grass.58eb032fe701bb5ab414.png",
+    "static/media/cat.png": "/cascading-chicken/static/media/cat.33100f5cf484df404abb.png",
+    "static/media/lilly.png": "/cascading-chicken/static/media/lilly.23826b06c8d4a24166b4.png",
     "static/media/water.png": "/cascading-chicken/static/media/water.ba20ad44960224b9b196.png",
+    "static/media/lilly-red.png": "/cascading-chicken/static/media/lilly-red.565ce488b36897221e2e.png",
+    "static/media/duck.png": "/cascading-chicken/static/media/duck.d53f50850906e971f4dd.png",
+    "static/media/crab.png": "/cascading-chicken/static/media/crab.3201d511b56c80c1f3d3.png",
+    "static/media/frog.png": "/cascading-chicken/static/media/frog.59c7e0895627f5494819.png",
+    "static/media/hen.png": "/cascading-chicken/static/media/hen.b44506619dfbab26b5df.png",
     "index.html": "/cascading-chicken/index.html",
-    "main.d34960f4.css.map": "/cascading-chicken/static/css/main.d34960f4.css.map",
-    "main.f81c5876.js.map": "/cascading-chicken/static/js/main.f81c5876.js.map"
+    "main.241459d0.css.map": "/cascading-chicken/static/css/main.241459d0.css.map",
+    "main.aed6512b.js.map": "/cascading-chicken/static/js/main.aed6512b.js.map"
   },
   "entrypoints": [
-    "static/css/main.d34960f4.css",
-    "static/js/main.f81c5876.js"
+    "static/css/main.241459d0.css",
+    "static/js/main.aed6512b.js"
   ]
 }
