@@ -10,7 +10,7 @@ const initialState = {
   code: "",
   playerPosition: getLevelData(0).frog,
   levelPassed: false,
-  gameStarted: true,
+  gameStarted: false,
   levelData: getLevelData(0),
   character: "crab",
 };
@@ -117,7 +117,7 @@ const gameSlice = createSlice({
           state.playerPosition[0] - 1,
           state.playerPosition[1],
         ];
-        console.log(state.playerPosition)
+        console.log(state.playerPosition);
       }
     },
   },
